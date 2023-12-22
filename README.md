@@ -3,5 +3,4 @@
 This is a project using APIs on dictionary and ReactJS 
 
 ## :rocket: Features
-- Create API between dico/app to search all possible words
-- Use a :fr: API
+- `/src/components/Form.jsx`: Fetch words from a dictionary using API
