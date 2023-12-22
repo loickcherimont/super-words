@@ -1,7 +1,38 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { getAlphabet } from "../assets/scripts/utils"
+// import { fetchWords } from "../assets/scripts/api"
 
 export function Form() {
+
+    useEffect(() => {
+
+        const URL = "https://jsonplaceholder.typicode.com/comments?postId=1", options = {
+            method: 'GET',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+        };
+
+        // Todo: Fetch words from dico
+        const fetchWords = async () => {
+            const response = await fetch(URL, options)
+
+            if(!response.ok) {
+                console.error("Cannot join API")
+            }
+            const data = await response.json()
+
+            console.log(data)
+        }
+
+        fetchWords()
+
+        return () => {
+            console.log("I return something")
+        }
+
+    }, [])
 
     const [letters, setLetters] = useState("")
 
@@ -9,12 +40,6 @@ export function Form() {
         e.preventDefault()
 
         sanitize(letters)
-
-        // e.target.reset() // to empty fields
-
-        // const arrayLetters = letters.split("")
-
-        // console.log(arrayLetters)
     }
 
     // Update the input value
