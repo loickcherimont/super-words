@@ -3,3 +3,4 @@ export function getAlphabet() {
     const alphabet = alpha.map((x) => String.fromCharCode(x))
     return alphabet
 }
+
