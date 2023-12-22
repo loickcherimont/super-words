@@ -1,11 +1,15 @@
+import { Footer } from "./components/Footer"
+import { Form } from "./components/Form"
+import { Header } from "./components/Header"
+
 function App() {
 
   return (
-    <>
-      <footer>
-        <p>&copy; Copyright | Loick Cherimont 2023</p>
-      </footer>
-    </>
+    <div>
+      <Header />
+      <Form />
+      <Footer />
+    </div>
   )
 }
 
