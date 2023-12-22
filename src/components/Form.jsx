@@ -43,10 +43,12 @@ function sanitize(inputValue) {
 
     const ALPHABET = getAlphabet()
 
-    inputValue = inputValue.toUpperCase()
+    // Set to uppercase
+    // Remove surplus of white spaces
+    inputValue = inputValue.toUpperCase().trim()
 
     // Not empty
-    if (!inputValue.trim()) {
+    if (!inputValue) {
         console.log("Please complete this input!")
         return
     }
